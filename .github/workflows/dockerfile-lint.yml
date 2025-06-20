@@ -5,17 +5,12 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
-  hadolint:
-    name: Run Hadolint on Dockerfile
+  lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Run Hadolint
         uses: hadolint/hadolint-action@v2.1.0
         with:
