@@ -27,7 +27,7 @@ jobs:
           ./dependency-check/bin/dependency-check.sh --project "Simple Flask App" --scan . --format HTML --out dependency-check-report.html
 
       - name: Upload Report as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
           path: dependency-check-report.html
